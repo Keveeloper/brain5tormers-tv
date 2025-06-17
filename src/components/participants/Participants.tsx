@@ -4,13 +4,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { useLocation } from 'react-router';
 import useParticipants from '../../hooks/useParticipants';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Participants = () => {
     const location = useLocation();
     console.log(location.pathname);
     
-    const { participants, loading, error } = useParticipants(location.pathname === '/medellin' ? 'Medellín' : 'Bogotá');
+    const { participants } = useParticipants(location.pathname === '/medellin' ? 'Medellín' : 'Bogotá');
     return (
         <div className='relative w-full h-screen'>
             <Swiper 
